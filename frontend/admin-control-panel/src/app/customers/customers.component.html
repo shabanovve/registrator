@@ -2,7 +2,9 @@
 
 <ul class="customers">
   <li *ngFor="let customer of customers">
-    <span class="badge">{{customer.id}}</span> {{customer.name}}
+    <a routerLink="/customers/{{customer.id}}">
+      <span class="badge">{{customer.id}}</span> {{customer.name}}
+    </a>
   </li>
 </ul>
 <div>
