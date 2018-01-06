@@ -1,3 +1,15 @@
-<p>
-  customers works!
-</p>
+<h2>customers</h2>
+
+<ul class="customers">
+  <li *ngFor="let customer of customers">
+    <span class="badge">{{customer.id}}</span> {{customer.name}}
+  </li>
+</ul>
+<div>
+  <label>customer name:
+    <input #customerName />
+  </label>
+  <button (click)="add(customerName.value); customerName.value=''">
+    add
+  </button>
+</div>
