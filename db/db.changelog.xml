@@ -11,10 +11,17 @@
 
     <changeSet id="1" author="shabanovve">
 	<sql>
-		create table customers(
-    			customer_id   INTEGER UNIQUE,
-    			name VARCHAR(255)
+		CREATE TABLE public.customers
+		(
+		  customer_id bigint NOT NULL,
+		  name character varying(255),
+		  CONSTRAINT customer_pkey PRIMARY KEY (customer_id)
+		)
+		WITH (
+  		  OIDS=FALSE
 		);
+		ALTER TABLE public.customers
+  		OWNER TO registrator;
 	</sql>
     </changeSet>
 
@@ -24,18 +31,4 @@
 	</sql>
     </changeSet>
 
-    <changeSet id="3" author="shabanovve">
-        <sql>
-                create table lessons(
-                        lesson_id   INTEGER UNIQUE,
-                        time timestamp 
-                );
-        </sql>
-    </changeSet>
-
-    <changeSet id="4" author="shabanovve">
-        <sql>
-                create sequence seq_lessons;
-        </sql>
-    </changeSet>
 </databaseChangeLog>
