@@ -5,6 +5,8 @@
     <a routerLink="/customers/{{customer.id}}">
       <span class="badge">{{customer.id}}</span> {{customer.name}}
     </a>
+    <button class="delete" title="delete customer"
+            (click)="delete(customer)">x</button>
   </li>
 </ul>
 <div>

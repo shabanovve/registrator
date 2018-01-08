@@ -9,9 +9,10 @@ import ru.yoga73.registrator.service.CustomerService;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/customers")
+@RequestMapping(CustomerController.BASE_URL)
 public class CustomerController {
 
+    public static final String BASE_URL = "/api/customers";
     @Autowired
     private CustomerService customerService;
 
@@ -25,4 +26,9 @@ public class CustomerController {
         return customerService.addCustomer(customer);
     }
 
+    @RequestMapping(path = "/{id}", method = RequestMethod.DELETE)
+    public String deleteCustomer(@PathVariable("id") Long id) {
+        customerService.deleteCustomer(id);
+        return "{\"status\":\"OK\"}";
+    }
 }

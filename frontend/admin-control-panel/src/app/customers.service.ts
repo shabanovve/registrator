@@ -27,7 +27,12 @@ export class CustomersService {
     );
 
   }
-
+  delete (customer: Customer): Observable<String> {
+    const url = `${this.heroesUrl}/${customer.id}`;
+    return this.http.delete<String>(url, httpOptions).pipe(
+      catchError(this.handleError<String>('delete'))
+    );
+  }
   /**
    * Handle Http operation that failed.
    * Let the app continue.

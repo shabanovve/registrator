@@ -23,6 +23,10 @@ export class CustomersComponent implements OnInit {
         this.customers.push(customer);
       });
   }
+  delete(customer: Customer): void {
+    this.customers = this.customers.filter(c => c !== customer);
+    this.customersService.delete(customer).subscribe();
+  }
   ngOnInit() {
     this.getCustomers();
   }

@@ -16,4 +16,8 @@ public class CustomerService {
     public Iterable<Customer> obtainAllUsers() {
         return customerRepository.findAll();
     }
+
+    public void deleteCustomer(Long id) {
+        customerRepository.delete(id);
+    }
 }
