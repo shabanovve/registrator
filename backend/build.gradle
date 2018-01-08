@@ -28,6 +28,10 @@ dependencies {
 	compile('org.springframework.boot:spring-boot-starter-web')
 	compile("org.springframework.boot:spring-boot-starter-thymeleaf")
 	compile group: 'org.springframework.boot', name: 'spring-boot-starter-data-jpa', version: '1.5.9.RELEASE'
+
 	compile group: 'org.postgresql', name: 'postgresql', version: '42.1.4'
+
+	compile group: 'com.google.guava', name: 'guava', version: '23.6-jre'
+
 	testCompile('org.springframework.boot:spring-boot-starter-test')
 }

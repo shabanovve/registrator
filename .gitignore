@@ -1,4 +1,5 @@
 out 
+../backend/src/main/resources/static
 
 # Compiled class file
 *.class

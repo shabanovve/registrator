@@ -12,4 +12,8 @@ public class CustomerService {
     public void addCustomer(String name) {
         customerRepository.save(new Customer(name));
     }
+
+    public Iterable<Customer> obtainAllUsers() {
+        return customerRepository.findAll();
+    }
 }
