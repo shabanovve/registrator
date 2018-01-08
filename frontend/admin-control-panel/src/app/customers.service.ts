@@ -21,6 +21,13 @@ export class CustomersService {
       );
   }
 
+  add(customer: Customer): Observable<Customer> {
+    return this.http.post<Customer>(this.heroesUrl + '/add', customer, httpOptions).pipe(
+      catchError(this.handleError<Customer>('add'))
+    );
+
+  }
+
   /**
    * Handle Http operation that failed.
    * Let the app continue.

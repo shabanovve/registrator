@@ -9,8 +9,8 @@ public class CustomerService {
     @Autowired
     private CustomerRepository customerRepository;
 
-    public void addCustomer(String name) {
-        customerRepository.save(new Customer(name));
+    public Customer addCustomer(Customer customer) {
+        return customerRepository.save(customer);
     }
 
     public Iterable<Customer> obtainAllUsers() {

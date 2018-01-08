@@ -18,6 +18,10 @@ export class CustomersComponent implements OnInit {
       .subscribe(customers => this.customers = customers);
   }
   add(name): void {
+    this.customersService.add({ name } as Customer)
+      .subscribe(customer => {
+        this.customers.push(customer);
+      });
   }
   ngOnInit() {
     this.getCustomers();
