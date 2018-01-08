@@ -17,6 +17,8 @@ export class CustomersComponent implements OnInit {
     this.customersService.getCustomers()
       .subscribe(customers => this.customers = customers);
   }
+  add(name): void {
+  }
   ngOnInit() {
     this.getCustomers();
   }
