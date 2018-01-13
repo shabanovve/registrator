@@ -1,0 +1,19 @@
+<h2>lessons</h2>
+
+<ul class="item-list">
+  <li *ngFor="let lesson of lessons">
+    <a routerLink="/lessons/{{lesson.id}}">
+      <span class="badge">{{lesson.id}}</span> {{lesson.date}}
+    </a>
+    <button class="delete" title="delete lesson"
+            (click)="delete(lesson)">x</button>
+  </li>
+</ul>
+<div>
+  <label>lesson date:
+    <input #lessonDate />
+  </label>
+  <button (click)="add(lessonDate.value); lessonDate.value=''">
+    add
+  </button>
+</div>
