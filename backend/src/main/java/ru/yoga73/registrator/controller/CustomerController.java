@@ -13,12 +13,13 @@ import java.util.List;
 public class CustomerController {
 
     public static final String BASE_URL = "/api/customers";
+
     @Autowired
     private CustomerService customerService;
 
     @RequestMapping
     public List<Customer> obtainAllCustomers() {
-        return Lists.newArrayList(customerService.obtainAllUsers());
+        return Lists.newArrayList(customerService.obtainAllCustomers());
     }
 
     @RequestMapping(value = "/add", method = RequestMethod.POST)

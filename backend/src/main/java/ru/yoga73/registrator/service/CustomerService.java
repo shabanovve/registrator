@@ -13,7 +13,7 @@ public class CustomerService {
         return customerRepository.save(customer);
     }
 
-    public Iterable<Customer> obtainAllUsers() {
+    public Iterable<Customer> obtainAllCustomers() {
         return customerRepository.findAll();
     }
 

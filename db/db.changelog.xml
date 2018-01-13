@@ -27,8 +27,44 @@
 
     <changeSet id="2" author="shabanovve">
 	<sql>
-		create sequence seq_customers;
+		CREATE SEQUENCE public.seq_customers
+		  INCREMENT 1
+		  MINVALUE 1
+		  MAXVALUE 9223372036854775807
+		  START 1
+		  CACHE 1;
+		ALTER TABLE public.seq_customers
+		  OWNER TO registrator;
 	</sql>
+    </changeSet>
+
+    <changeSet id="3" author="shabanovve">
+        <sql>
+		CREATE TABLE public.lessons
+		(
+  		 lesson_id bigint NOT NULL,
+  		 "date" timestamp without time zone NOT NULL,
+  		 CONSTRAINT lesson_pkey PRIMARY KEY (lesson_id)
+		)
+		WITH (
+		  OIDS=FALSE
+		);
+		ALTER TABLE public.lessons
+  		OWNER TO registrator;
+        </sql>
+    </changeSet>
+
+    <changeSet id="4" author="shabanovve">
+        <sql>
+		CREATE SEQUENCE public.seq_lessons
+		  INCREMENT 1
+		  MINVALUE 1
+		  MAXVALUE 9223372036854775807
+		  START 1
+		  CACHE 1;
+		ALTER TABLE public.seq_lessons
+		  OWNER TO registrator;
+        </sql>
     </changeSet>
 
 </databaseChangeLog>
