@@ -9,7 +9,7 @@ import java.util.Date;
 public class Lesson {
     @Id
     @GeneratedValue
-    @Column(name = "customer_id")
+    @Column(name = "lesson_id")
     private Long id;
     private Date date;
 
