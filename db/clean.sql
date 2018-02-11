@@ -56,7 +56,7 @@ BEGIN
     )
  LOOP
 
-  v_idx_statement = 'DROP TABLE ' || current_schema || '.' || rd_object.tablename;
+  v_idx_statement = 'DROP TABLE ' || current_schema || '.' || rd_object.tablename || 'CASCADE';
   RAISE NOTICE '%', v_idx_statement;
   EXECUTE v_idx_statement;
  END LOOP; 

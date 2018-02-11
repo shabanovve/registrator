@@ -67,4 +67,39 @@
         </sql>
     </changeSet>
 
+	<changeSet id="5" author="shabanovve">
+		<sql>
+			CREATE TABLE public.registrations
+			(
+			registration_id bigint NOT NULL,
+			customer_customer_id bigint,
+			lesson_lesson_id bigint,
+			CONSTRAINT registrations_pkey PRIMARY KEY (registration_id),
+				CONSTRAINT fki4ngf3p5myevrkpg7wc5scyyu FOREIGN KEY (lesson_lesson_id)
+				REFERENCES public.lessons (lesson_id) MATCH SIMPLE
+				ON UPDATE NO ACTION ON DELETE NO ACTION,
+			CONSTRAINT fkjca38n30j22r98w701b3ut3iy FOREIGN KEY (customer_customer_id)
+				REFERENCES public.customers (customer_id) MATCH SIMPLE
+				ON UPDATE NO ACTION ON DELETE NO ACTION
+			)
+			WITH (
+			OIDS=FALSE
+			);
+			ALTER TABLE public.registrations
+			OWNER TO registrator;
+		</sql>
+	</changeSet>
+
+	<changeSet id="6" author="shabanovve">
+		<sql>
+			CREATE SEQUENCE public.seq_registrations
+			INCREMENT 1
+			MINVALUE 1
+			MAXVALUE 9223372036854775807
+			START 1
+			CACHE 1;
+			ALTER TABLE public.seq_registrations
+			OWNER TO registrator;
+		</sql>
+	</changeSet>
 </databaseChangeLog>
