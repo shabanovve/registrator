@@ -8,7 +8,8 @@ import java.util.Date;
 @Table(name = "lessons")
 public class Lesson {
     @Id
-    @GeneratedValue
+    @SequenceGenerator(name="seq_lessons",sequenceName="seq_lessons", allocationSize=50)
+    @GeneratedValue(strategy=GenerationType.SEQUENCE,generator="seq_lessons")
     @Column(name = "lesson_id")
     private Long id;
     private Date date;

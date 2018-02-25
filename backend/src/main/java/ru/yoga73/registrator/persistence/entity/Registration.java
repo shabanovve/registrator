@@ -8,7 +8,8 @@ import javax.persistence.*;
 @Table(name = "registrations")
 public class Registration {
     @Id
-    @GeneratedValue
+    @SequenceGenerator(name="seq_registrations",sequenceName="seq_registrations", allocationSize=50)
+    @GeneratedValue(strategy=GenerationType.SEQUENCE,generator="seq_registrations")
     @Column(name = "registration_id")
     private Long id;
 
