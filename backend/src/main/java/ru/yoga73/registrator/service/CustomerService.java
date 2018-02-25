@@ -20,4 +20,8 @@ public class CustomerService {
     public void deleteCustomer(Long id) {
         customerRepository.delete(id);
     }
+
+    public Customer getById(Long id) {
+        return customerRepository.findOne(id);
+    }
 }

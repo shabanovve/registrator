@@ -32,4 +32,9 @@ public class CustomerController {
         customerService.deleteCustomer(id);
         return "{\"status\":\"OK\"}";
     }
+
+    @RequestMapping(value = "/current", method = RequestMethod.GET)
+    public Customer getCurrent() {
+        return customerService.getById(1L);
+    }
 }
