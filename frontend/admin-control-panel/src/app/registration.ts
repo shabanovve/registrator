@@ -1,5 +1,8 @@
+import {Customer} from './customer';
+import {Lesson} from './lesson';
+
 export class Registration {
   id: number;
-  customerId: number;
-  lessonId: number;
+  customer: Customer;
+  lesson: Lesson;
 }

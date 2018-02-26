@@ -3,7 +3,7 @@
 <ul class="item-list">
   <li *ngFor="let registration of registrations">
     <a routerLink="/registrations/{{registration.id}}">
-      <span class="badge">{{registration.id}}</span> {{registration.customerId + '_' + registration.lessonId}}
+      <span class="badge">{{registration.id}}</span> {{registration.customer.id + '_' + registration.lesson.id}}
     </a>
     <button class="delete" title="delete lesson"
             (click)="delete(registration)">x</button>
