@@ -18,8 +18,8 @@ export class RegistrationsComponent implements OnInit {
   }
   add(customerId, lessonId): void {
     const registration = new Registration();
-    registration.customerId = customerId;
-    registration.lessonId = lessonId;
+    registration.customer.id = customerId;
+    registration.lesson.id = lessonId;
     this.registrationService.add(registration)
       .subscribe(regs => {
         this.registrations.push(regs);
