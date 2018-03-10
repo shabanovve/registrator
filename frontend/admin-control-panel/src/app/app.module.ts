@@ -11,6 +11,11 @@ import {LessonsComponent} from './lessons/lessons.component';
 import {LessonService} from './lesson.service';
 import { RegistrationsComponent } from './registrations/registrations.component';
 import {RegistrationService} from './registration.service';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatNativeDateModule} from '@angular/material';
+import {MatInputModule} from '@angular/material';
+import {MatDatepickerModule} from '@angular/material/datepicker';
 
 @NgModule({
   declarations: [
@@ -23,7 +28,12 @@ import {RegistrationService} from './registration.service';
     BrowserModule,
     FormsModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule,
+    MatInputModule,
+    MatFormFieldModule,
+    MatNativeDateModule,
+    MatDatepickerModule
   ],
   providers: [CustomersService, LessonService, RegistrationService],
   bootstrap: [AppComponent]
