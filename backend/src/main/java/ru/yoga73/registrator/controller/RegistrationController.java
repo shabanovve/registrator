@@ -30,8 +30,8 @@ public class RegistrationController {
         Registration registration = registrationService.addRegistration(registrationDto);
         RegistrationDto result = new RegistrationDto();
         result.setId(registration.getId());
-        result.setCustomerId(registration.getCustomer().getId());
-        result.setLessonId(registration.getLesson().getId());
+        result.setCustomer(registration.getCustomer());
+        result.setLesson(registration.getLesson());
         return result;
     }
 

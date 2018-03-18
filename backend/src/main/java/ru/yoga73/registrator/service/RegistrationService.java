@@ -22,8 +22,8 @@ public class RegistrationService {
 
     public Registration addRegistration(RegistrationDto registrationDto) {
         Registration registration = new Registration();
-        Lesson lesson = lessonRepository.findOne(registrationDto.getLessonId());
-        Customer customer = customerRepository.findOne(registrationDto.getCustomerId());
+        Lesson lesson = lessonRepository.findOne(registrationDto.getLesson().getId());
+        Customer customer = customerRepository.findOne(registrationDto.getCustomer().getId());
         registration.setCustomer(customer);
         registration.setLesson(lesson);
         return registrationRepository.save(registration);
