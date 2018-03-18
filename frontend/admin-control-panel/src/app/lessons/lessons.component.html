@@ -3,7 +3,7 @@
 <ul class="item-list">
   <li *ngFor="let lesson of lessons">
     <a routerLink="/lessons/{{lesson.id}}">
-      <span class="badge">{{lesson.id}}</span> {{lesson.date}}
+      <span class="badge">{{lesson.id}}</span> {{lesson.date | date: dateTimeTemplate}}
     </a>
     <button class="delete" title="delete lesson"
             (click)="delete(lesson)">x
@@ -12,10 +12,10 @@
 </ul>
 <div>
   <label>lesson date:
-    <input [owlDateTime]="dt1" [owlDateTimeTrigger]="dt1" placeholder="Date Time">
-    <owl-date-time #dt1></owl-date-time>
+    <input [owlDateTime]="dt" [owlDateTimeTrigger]="dt" placeholder="Date Time">
+    <owl-date-time #dt ></owl-date-time>
   </label>
-  <button (click)="add(lessonDate.value); lessonDate.value=''">
+  <button (click)="add(dt.dtInput.value);">
     add
   </button>
 </div>

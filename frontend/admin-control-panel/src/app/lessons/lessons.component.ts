@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {LessonService} from '../lesson.service';
 import {Lesson} from '../lesson';
+import * as moment from 'moment';
 
 @Component({
   selector: 'app-lessons',
@@ -10,6 +11,7 @@ import {Lesson} from '../lesson';
 export class LessonsComponent implements OnInit {
 
   lessons: Lesson[];
+  dateTimeTemplate = 'dd/MM/yyyy hh:mm';
 
   constructor(private lessonsService: LessonService) {
   }
@@ -19,7 +21,10 @@ export class LessonsComponent implements OnInit {
       .subscribe(lessons => this.lessons = lessons);
   }
   add(date): void {
-    this.lessonsService.add({ date } as Lesson)
+    const lesson = new Lesson();
+    lesson.date = moment(date, this.dateTimeTemplate)
+      .toDate();
+    this.lessonsService.add(lesson)
       .subscribe(customer => {
         this.lessons.push(customer);
       });
