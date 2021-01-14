@@ -37,7 +37,8 @@ public class RegistrationController {
 
     @RequestMapping(path = "/{id}", method = RequestMethod.DELETE)
     public String deleteRegistration(@PathVariable("id") Long id) {
-        registrationService.deleteRegistration(id);
+        Registration registration = registrationService.findById(id);
+        registrationService.deleteRegistration(registration);
         return "{\"status\":\"OK\"}";
     }
 }

@@ -33,8 +33,11 @@ public class RegistrationService {
         return registrationRepository.findAll();
     }
 
-    public void deleteRegistration(Long id) {
-        registrationRepository.delete(id);
+    public void deleteRegistration(Registration registration) {
+        registrationRepository.delete(registration);
     }
 
+    public Registration findById(Long id) {
+        return registrationRepository.findById(id).get();
+    }
 }
