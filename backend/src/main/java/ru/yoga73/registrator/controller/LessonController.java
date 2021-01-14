@@ -31,7 +31,8 @@ public class LessonController {
 
     @RequestMapping(path = "/{id}", method = RequestMethod.DELETE)
     public String deleteLesson(@PathVariable("id") Long id) {
-        lessonService.deleteLesson(id);
+        Lesson lesson = lessonService.findById(id);
+        lessonService.deleteLesson(lesson);
         return "{\"status\":\"OK\"}";
     }
 

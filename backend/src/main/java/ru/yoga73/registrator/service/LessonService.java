@@ -19,7 +19,11 @@ public class LessonService {
         return lessonRepository.findAll();
     }
 
-    public void deleteLesson(Long id) {
-        lessonRepository.delete(id);
+    public void deleteLesson(Lesson lesson) {
+        lessonRepository.delete(lesson);
+    }
+
+    public Lesson findById(Long id) {
+        return lessonRepository.findById(id).get();
     }
 }
