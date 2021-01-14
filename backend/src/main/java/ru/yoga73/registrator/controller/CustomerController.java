@@ -29,7 +29,8 @@ public class CustomerController {
 
     @RequestMapping(path = "/{id}", method = RequestMethod.DELETE)
     public String deleteCustomer(@PathVariable("id") Long id) {
-        customerService.deleteCustomer(id);
+        Customer customer = customerService.getById(id);
+        customerService.deleteCustomer(customer);
         return "{\"status\":\"OK\"}";
     }
 

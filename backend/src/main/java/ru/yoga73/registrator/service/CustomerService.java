@@ -17,11 +17,11 @@ public class CustomerService {
         return customerRepository.findAll();
     }
 
-    public void deleteCustomer(Long id) {
-        customerRepository.delete(id);
+    public void deleteCustomer(Customer customer) {
+        customerRepository.delete(customer);
     }
 
     public Customer getById(Long id) {
-        return customerRepository.findOne(id);
+        return customerRepository.findById(id).get();
     }
 }
