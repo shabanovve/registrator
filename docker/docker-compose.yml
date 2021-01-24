@@ -4,6 +4,12 @@ services:
     build:
       context: ../db
     restart: always
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-postgres}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-changeme}
+      PGDATA: ${PGDATA}
+    volumes:
+      - db-data:/var/lib/postgresql/data
     networks:
       registrator-network:
         ipv4_address: 10.5.0.2
